@@ -38,7 +38,7 @@ gulp.task('rollup', function () {
 gulp.task('sass', function () {
     return gulp.src('./sass/style.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('.app'));
+        .pipe(gulp.dest('app'));
 });
 
 gulp.task('sass:watch', function () {
