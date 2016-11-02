@@ -2,25 +2,23 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "0.1.0",
-    "command": "npm",
-    "args": [ "run" ],
+    "command": "gulp",
     "isShellCommand": true,
-    "showOutput": "always",
-    "suppressTaskName": true,
+    "args": [
+        "--no-color"
+    ],
     "tasks": [
         {
-            "taskName": "build",
-            "args": ["rollup"],
-            "isBuildCommand": true
-        },
-        {
-            "taskName": "scss",
-            "args": ["build-css"]
-        },
-        {
-            "taskName": "watch scss",
-            "args": ["watch-css"],
-            "isWatching": true
+            "taskName": "default",
+            "args": [],
+            "isBuildCommand": true,
+            "isWatching": false,
+            "problemMatcher": [
+                //"default"
+                 //"$lessCompile",
+                // "$tsc",
+                // "$jshint"
+            ]
         }
     ]
 }
