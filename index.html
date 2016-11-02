@@ -26,20 +26,15 @@
 			</div>
 
 			<!-- Content area -->
-			<div class="contenttext">
-
-				<h2 class="win-h2">SplitView Content Area</h2>
-				<div id="tracks">
-                   <div data-win-control="Controls_TrackEditor.TrackEditor"
-                        data-win-options="{controlText: 'This was created declaratively', message: 'Declarative control' }">
-                    </div>
+			<div class="content">
+				<div id="menubar" data-win-control="jsaw.ui.menuBar">
+				</div>
+				<div id="tracks" data-win-control="jsaw.ui.trackEditor">
 				</div>
 				<div>
-					<div id="track-properties">
+					<div id="track-properties" data-win-control="jsaw.ui.trackProperties">
 					</div>
-					<div id="global-mixer">
-			            <div data-win-control="mixerchannel">
-                        </div>
+					<div id="global-mixer" data-win-control="jsaw.ui.mixer">						
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,7 @@
 require('./controls/track-editor');
-var greet = require('./greet');
+require('./controls/track-properties');
+require('./controls/mixer');
+require('./controls/menubar');
 
 //document.querySelector(".main").innerHTML = greet();
 
