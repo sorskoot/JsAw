@@ -1,0 +1,21 @@
+#zoombar-area{
+
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    background: blue;
+    right: 0px;
+    height:  $base-distance * 5;
+    left: 0px;
+    margin: 0 $base-distance*3  $base-distance  $base-distance*2;
+
+    .zoombar {
+        height: $base-distance * 5;
+        @include flex-content;
+        background-color:red; // just for now...
+        .zoombar-canvas,
+        .zoombar-overlayCanvas {
+            width: 100%;
+        }
+    }
+}

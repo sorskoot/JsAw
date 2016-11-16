@@ -1,9 +1,6 @@
-require('./track-samples');
-require('./zoombar');
-
 (function () {
     WinJS.Namespace.define('jsaw.ui', {
-        trackEditor: WinJS.Class.define(
+        trackSamples: WinJS.Class.define(
             function (element, options) {
                 this.element = element || document.createElement('div');
                 this.element.winControl = this;
@@ -11,11 +8,15 @@ require('./zoombar');
                 this.createControl();
             }, {
                 createControl: function () {
-                    WinJS.UI.Fragments.render('./app/templates/track-editor.html', this.element)
-                                      .done( ()=>WinJS.UI.processAll());
+                    WinJS.UI.Fragments.render('./app/templates/track-samples.html', this.element)
+                    .done(
+                         /* Your success and error handlers */ 
+                    
+                    );
                 }
             })
     });
 
-    WinJS.Class.mix(jsaw.ui.trackEditor, WinJS.Utilities.eventMixin);
+    WinJS.Class.mix(jsaw.ui.trackSamples, WinJS.Utilities.eventMixin);
 })();
+

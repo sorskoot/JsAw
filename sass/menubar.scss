@@ -7,7 +7,8 @@
              display:inline;
              border:1px solid darken($foreground-color, 50%);
              padding: $base-distance;
-             background-color: darken($foreground-color, 75%)
+             background-color: darken($foreground-color, 75%);
+             
              &:hover {
                     background-color:$highlight-color;
                     cursor:pointer;                    

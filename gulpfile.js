@@ -47,9 +47,9 @@ function doWebpack(minify) {
           loaders: [
               {
                 loader: 'babel',
-                query: {
-                  presets: ['es2015']
-                },
+                // query: {
+                //   presets: ['es2015']
+                // },
                 resolve: {
                   root: path.join(__dirname),
                   fallback: path.join(__dirname, 'node_modules'),

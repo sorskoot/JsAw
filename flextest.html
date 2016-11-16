@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background: #333;
+        }
+        
+        #zoombar-area {
+            display:flex;
+            position: absolute;
+            bottom: 0px;
+            background: blue;
+            width: 100%;
+            height: 25px;
+        }
+        
+        .sample {
+            display: inline;
+            background: green;
+        }
+        
+        #tracks {}
+        
+        .samples {
+            align-content: stretch;
+            flex-grow: 1;
+            background: red;
+            overflow: hidden;
+        }
+        
+        .track {
+            display: flex;
+            height: 75px;
+            background: yellow;
+            margin-bottom: 5px;
+        }
+        
+        .property {
+            min-width: 150px;
+            background: purple;
+            max-width: 350px;
+            flex-grow: 0.25;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="track-editor" style="height: 100%;position: relative;">
+        <div id="tracks">
+            <div class="track">
+                <div class="property"></div>
+                <div class="samples">
+                    <div class="sample"></div>
+                    <div class="sample"></div>
+                    <div class="sample"></div>
+                </div>
+            </div>
+            <div class="track">
+                <div class="property"></div>
+                <div class="samples">
+                    <div class="sample"></div>
+                    <div class="sample"></div>
+                    <div class="sample"></div>
+                </div>
+            </div>
+            <div class="track">
+                <div class="property"></div>
+                <div class="samples">
+                    <div class="sample"></div>
+                    <div class="sample"></div>
+                    <div class="sample"></div>
+                </div>
+            </div>
+        </div>
+        <div id="zoombar-area">
+            <div id="zoombar-spacer" class="property"></div>
+            <div id="zoombar" class="samples"></div>
+        </div>
+    </div>
+</body>
+
+</html>

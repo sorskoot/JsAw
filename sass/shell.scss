@@ -44,3 +44,34 @@
     margin-left: 20px;
     margin-top: 6px;
 }
+
+#tracks {
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 80%;
+      position:relative;
+}
+
+#track-properties{
+    flex-grow: 1;
+    min-width: 25%;
+}
+
+#global-mixer{
+    flex-grow: 1;
+     min-width: 25%;
+}
+
+.panel-layout{
+    height: 90%;
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+
+    .panel {
+        margin: $base-distance;
+        border: 1px solid darken($foreground-color, 50%);
+        border-radius: $base-distance;
+        padding: $base-distance*2;
+    }
+}
