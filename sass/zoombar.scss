@@ -3,7 +3,7 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
-    height:  $base-distance * 5;
+    height:  $base-distance * 9;
     left: 0px;
     margin: 0 $base-distance*3  $base-distance  $base-distance*2;
     
@@ -17,7 +17,7 @@
             width:350px;
     }
     .zoombar {
-        height: $base-distance * 5;
+        height: $base-distance * 9;
         @include flex-content;
         position:relative;
         .zoombar-canvas,

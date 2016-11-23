@@ -12,7 +12,7 @@
 
                 this.startPosition = 0.2//0.0; 
                 this.endPosition = 0.7;//1.0;
-
+                this.scale = this.endPosition - this.startPosition;
                 this.createControl();
             }, {
                 createControl: function () {
@@ -58,6 +58,9 @@
                             this.zoombarOverlayCanvas.style.cursor = 'pointer';
 
                             if (this.dragging) {
+                                //this.scale = this.endPosition - this.startPosition;
+                                this.dispatchEvent('dragCompleted', { startPosition: this.startPosition, scale: this.scale });
+
                                 this.draggingAction = 'moving';
                                 var mousePos = (1.0 / this.zoombarOverlayCanvas.width) * (this.draggingStartPos - currentPos.x);
                                 if (this.oldStartPosition - mousePos > 0 && this.oldEndPosition - mousePos < 1) {
@@ -124,15 +127,19 @@
                         this.oldEndPosition = this.endPosition;
                     }
 
-                    this.zoombarOverlayCanvas.onmouseup = e => {
+                    this.zoombarOverlayCanvas.onmouseup = () => this.draggingEnded.apply(this);
+                    this.zoombarOverlayCanvas.onmouseout = () => this.draggingEnded.apply(this);
+                },
+
+                draggingEnded: function (e) {
+                    if (this.dragging) {
                         this.dragging = false;
-                        this.draggingAction = '';
-                    }
-                    this.zoombarOverlayCanvas.onmouseout = e => {
-                        this.dragging = false;
+                        this.scale = this.endPosition - this.startPosition;
+                        this.dispatchEvent('dragCompleted', { startPosition: this.startPosition, scale: this.scale });
                         this.draggingAction = '';
                     }
                 },
+
                 drawBackground: function () {
                     // draw the tracks on the zoombar
                     let zoombarCtx = this.zoombarCanvas.getContext('2d');
@@ -165,4 +172,5 @@
     }
 
     WinJS.Class.mix(jsaw.ui.zoombar, WinJS.Utilities.eventMixin);
+
 })();

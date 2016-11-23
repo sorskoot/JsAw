@@ -10,9 +10,7 @@
             }, {
                 createControl: function () {
                     WinJS.UI.Fragments.render('./app/templates/track-properties.html', this.element)
-                    .done(
-                         /* Your success and error handlers */ 
-                    
+                    .done(                
                     );
                 }
             })

@@ -11,8 +11,20 @@ require('./zoombar');
                 this.createControl();
             }, {
                 createControl: function () {
+                    let self = this;
                     WinJS.UI.Fragments.render('./app/templates/track-editor.html', this.element)
-                                      .done( ()=>WinJS.UI.processAll());
+                        .done((html) => {
+
+                            WinJS.UI.processAll().done(() => {
+                                self.zoombar = html.querySelector("#zoombar").winControl;
+                                self.samples = html.querySelector("#track-samples").winControl;
+
+                                self.zoombar.addEventListener("dragCompleted", (e) => {
+                                   self.samples.updatePan(e.detail.startPosition);
+                                   self.samples.updateScale(e.detail.scale);
+                                })
+                            })
+                        });
                 }
             })
     });

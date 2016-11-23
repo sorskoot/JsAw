@@ -3,7 +3,7 @@ require('./controls/track-properties');
 require('./controls/mixer');
 require('./controls/menubar');
 
-//document.querySelector(".main").innerHTML = greet();
+window.$ = (selector) => document.querySelectorAll(selector);
 
 WinJS.UI.processAll().done(function () {
     var splitView = document.querySelector(".splitView").winControl;
